@@ -70,6 +70,7 @@ class Lesson(BaseModel):
             (video.duration for video in self.videos.all()), default=0
         )
         super().save(*args, **kwargs)
+    
 
     class StatusOfProgress(models.TextChoices):
         IN_PROG = "in_prog", "Jarayonda"
@@ -138,7 +139,7 @@ class CauseOfComplaint(BaseModel):
     class Complaints(models.TextChoices):
         ONE = (
             "1",
-            "No-o'rin savol/izoh",
+            "No-o'rin savol/izoh"
         )
         TWO = (
             "2",
@@ -243,3 +244,5 @@ class Notification(BaseModel):
 
     def __str__(self):
         return self.title
+
+            
